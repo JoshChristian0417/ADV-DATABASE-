@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Products - Stocks</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <strong>Stocks</strong>
+
+        <div>
+            Welcome, <%= user %> |
+            <a href="/logout">Logout</a>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="page-header">
+
+            <div>
+                <h1>Product Inventory</h1>
+                <p>Manage your products and stock.</p>
+            </div>
+
+            <a href="/products/add" class="btn btn-primary">
+                + Add Product
+            </a>
+
+        </div>
+
+        <table class="product-table">
+
+            <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <% products.forEach(product => { %>
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                <%= product.name %>
+                            </strong>
+                        </td>
+
+                        <td>
+                            <%= product.category %>
+                        </td>
+
+                        <td>
+                            ₱<%= product.price %>
+                        </td>
+
+                        <td>
+                            <%= product.quantity %>
+                        </td>
+
+                        <td>
+
+                            <div class="actions">
+
+                                <a
+                                    href="/products/edit/<%= product._id %>"
+                                    class="btn btn-secondary"
+                                >
+                                    Edit
+                                </a>
+
+                                <form
+                                    action="/products/delete/<%= product._id %>"
+                                    method="POST"
+                                >
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-danger"
+                                    >
+                                        Delete
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                <% }) %>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Stocks</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    
+
+<div class="video-overlay"></div>
+
+    <div class="login-container">
+
+        <h1 class="logo">Stocks</h1>
+
+        <p class="subtitle">
+            Product Inventory System
+        </p>
+
+        <form action="/login" method="POST">
+
+            <div class="form-group">
+                <label>Username</label>
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

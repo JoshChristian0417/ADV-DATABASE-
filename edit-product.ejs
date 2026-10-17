@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Edit Product - Stocks</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <strong>Stocks</strong>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+    <div class="form-card">
+
+        <h1>Edit Product</h1>
+
+        <form
+            action="/products/edit/<%= product._id %>"
+            method="POST"
+        >
+
+            <div class="form-group">
+
+                <label>Product Name</label>
+
+                <input
+                    type="text"
+                    name="name"
+                    value="<%= product.name %>"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Category</label>
+
+                <input
+                    type="text"
+                    name="category"
+                    value="<%= product.category %>"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Price</label>
+
+                <input
+                    type="number"
+                    name="price"
+                    value="<%= product.price %>"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Quantity</label>
+
+                <input
+                    type="number"
+                    name="quantity"
+                    value="<%= product.quantity %>"
+                    required
+                >
+
+            </div>
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Update Product
+                </button>
+
+                <a
+                    href="/products"
+                    class="btn btn-secondary"
+                >
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
